@@ -9,9 +9,16 @@ find a Debian or Ubuntu box with root on a clean public IP and run:
 	  && curl -fsSL https://get.docker.com/ | sh || apt-get -y install docker.io\
 	  && mkdir -p ~/netflix-proxy\
 	  && cd ~/netflix-proxy\
-	  && curl -fsSL https://github.com/ab77/netflix-proxy/archive/latest.tar.gz | gunzip - | tar x --strip-components=1\
+	  && curl -fsSL https://github.com/Nopoint11/netflix-proxy/archive/latest.tar.gz | gunzip - | tar x --strip-components=1\
 	  && ./build.sh
 
+
+工具：  (1)cd ~/netflix-proxy/auth && ./admin-reset.sh 
+      （2）service iptables|netfilter-persistent save 
+      （3）vi /usr/share/netfilter-persistent/plugins.d/15-ip4tables 
+      （4）vi /etc/iptables/rules.v4 
+      （5）iptables-save > /etc/iptables/rules.v4 
+      
 See the [**Wiki**](https://github.com/ab77/netflix-proxy/wiki) page(s) for some common troubleshooting ideas.
 
 ... or subscribe to [Unzoner](http://unzoner.com) VPN service to un-block:
